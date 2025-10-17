@@ -23,7 +23,7 @@ pub fn spawn_player(
 
     commands.spawn((
         //Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
-    Sprite::from_image(asset_server.load("sprites/sahur.png")),
+    Sprite::from_image(asset_server.load("embedded://sprites/sahur.png")),
         Transform {
             translation: Vec3::new(window.width() / 2.0, window.height() / 2.0, 0.0),
             scale: Vec3::splat(0.3), 
