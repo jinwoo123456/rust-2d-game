@@ -41,21 +41,21 @@ pub const BUTTON_NODE: Node = {
 
 pub fn get_title_text_style(asset_server: &Res<AssetServer>) -> (TextFont, TextColor) {
     (
-        TextFont::from_font(asset_server.load("fonts/FiraSans-Bold.ttf")).with_font_size(64.0),
+        TextFont::from_font(asset_server.load("embedded://fonts/FiraSans-Bold.ttf")).with_font_size(64.0),
         TextColor(Color::WHITE),
     )
 }
 
 pub fn get_final_score_text_style(asset_server: &Res<AssetServer>) -> (TextFont, TextColor) {
     (
-        TextFont::from_font(asset_server.load("fonts/FiraSans-Bold.ttf")).with_font_size(48.0),
+        TextFont::from_font(asset_server.load("embedded://fonts/FiraSans-Bold.ttf")).with_font_size(48.0),
         TextColor(Color::WHITE),
     )
 }
 
 pub fn get_button_text_style(asset_server: &Res<AssetServer>) -> (TextFont, TextColor) {
     (
-        TextFont::from_font(asset_server.load("fonts/FiraSans-Bold.ttf")).with_font_size(32.0),
+        TextFont::from_font(asset_server.load("embedded://fonts/FiraSans-Bold.ttf")).with_font_size(32.0),
         TextColor(Color::WHITE),
     )
 }

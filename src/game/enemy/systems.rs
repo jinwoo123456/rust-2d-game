@@ -19,7 +19,7 @@ pub fn spawn_enemies(
 
         commands.spawn((
             Transform::from_xyz(random_x, random_y, 0.0),
-            Sprite::from_image(asset_server.load("sprites/ball_red_large.png")),
+            Sprite::from_image(asset_server.load("embedded://sprites/ball_red_large.png")),
             Enemy::new(random::<f32>(), random::<f32>()),
         ));
     }
@@ -82,9 +82,9 @@ pub fn confine_enemy_movement(
         if direction_changed {
             // Randomly play one of the two sound effects.
             let sound_effect = if random::<f32>() > 0.5 {
-                asset_server.load("audio/pluck_001.ogg")
+                asset_server.load("embedded://audio/pluck_001.ogg")
             } else {
-                asset_server.load("audio/pluck_002.ogg")
+                asset_server.load("embedded://audio/pluck_002.ogg")
             };
             commands.spawn((AudioPlayer::new(sound_effect), PlaybackSettings::DESPAWN));
         }
@@ -108,7 +108,7 @@ pub fn spawn_enemies_over_time(
 
         commands.spawn((
             Transform::from_xyz(random_x, random_y, 0.0),
-            Sprite::from_image(asset_server.load("sprites/ball_red_large.png")),
+            Sprite::from_image(asset_server.load("embedded://sprites/ball_red_large.png")),
             Enemy::new(random::<f32>(), random::<f32>()),
         ));
     }

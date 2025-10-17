@@ -41,7 +41,7 @@ pub fn handle_game_over(
     mut app_state_next_state: ResMut<NextState<AppState>>,
 ) {
     for event in game_over_event_reader.read() {
-        println!("Your final score is: {}", event.score);
+        println!("최종 점수: {}", event.score);
         app_state_next_state.set(AppState::GameOver);
         println!("Entered AppState::GameOver");
     }

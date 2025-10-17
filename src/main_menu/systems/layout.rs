@@ -22,18 +22,18 @@ pub fn build_main_menu(commands: &mut Commands, asset_server: &Res<AssetServer>)
                 // Image 1
                 parent.spawn((
                     IMAGE_NODE.clone(),
-                    ImageNode::new(asset_server.load("sprites/ball_blue_large.png")),
+                    ImageNode::new(asset_server.load("embedded://sprites/bitcoin.png")),
                 ));
                 // Text
                 parent.spawn((
-                    Text("Ball & Stars".to_string()),
+                    Text("ball dodge".to_string()),
                     get_title_text_style(asset_server),
                     TextLayout::new_with_justify(JustifyText::Center),
                 ));
                 // Image 2
                 parent.spawn((
                     IMAGE_NODE.clone(),
-                    ImageNode::new(asset_server.load("sprites/ball_red_large.png")),
+                    ImageNode::new(asset_server.load("embedded://sprites/sahur.png")),
                 ));
             });
             // === Play Button ===

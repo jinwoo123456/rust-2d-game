@@ -22,8 +22,13 @@ pub fn spawn_player(
     let window = window_query.get_single().unwrap();
 
     commands.spawn((
-        Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
-        Sprite::from_image(asset_server.load("sprites/ball_blue_large.png")),
+        //Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
+    Sprite::from_image(asset_server.load("sprites/sahur.png")),
+        Transform {
+            translation: Vec3::new(window.width() / 2.0, window.height() / 2.0, 0.0),
+            scale: Vec3::splat(0.3), 
+            ..default()
+        },
         Player {},
     ));
 }
@@ -111,8 +116,8 @@ pub fn enemy_hit_player(
             let player_radius = PLAYER_SIZE / 2.0;
             let enemy_radius = ENEMY_SIZE / 2.0;
             if distance < player_radius + enemy_radius {
-                println!("Enemy hit player! Game Over!");
-                let sound_effect = asset_server.load("audio/explosionCrunch_000.ogg");
+                println!("게임오버");
+                let sound_effect = asset_server.load("embedded://audio/explosionCrunch_000.ogg");
                 commands.spawn((AudioPlayer::new(sound_effect), PlaybackSettings::DESPAWN));
                 commands.entity(player_entity).despawn();
                 game_over_event_writer.send(GameOver { score: score.value });
@@ -135,9 +140,9 @@ pub fn player_hit_star(
                 .distance(star_transform.translation);
 
             if distance < PLAYER_SIZE / 2.0 + STAR_SIZE / 2.0 {
-                println!("Player hit star!");
+                println!("비트코인건드리기");
                 score.value += 1;
-                let sound_effect = asset_server.load("audio/laserLarge_000.ogg");
+                let sound_effect = asset_server.load("embedded://audio/laserLarge_000.ogg");
                 commands.spawn((AudioPlayer::new(sound_effect), PlaybackSettings::DESPAWN));
                 commands.entity(star_entity).despawn();
             }

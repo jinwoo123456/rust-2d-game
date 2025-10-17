@@ -18,8 +18,12 @@ pub fn spawn_stars(
         let random_y = random::<f32>() * window.height();
 
         commands.spawn((
-            Transform::from_xyz(random_x, random_y, 0.0),
-            Sprite::from_image(asset_server.load("sprites/star.png")),
+            Sprite::from_image(asset_server.load("embedded://sprites/bitcoin.png")),
+            Transform {
+                translation: Vec3::new(random_x, random_y, 0.0),
+                scale: Vec3::splat(0.1), // 크기 20%로 축소
+                ..default()
+            },
             Star {},
         ));
     }
@@ -47,8 +51,12 @@ pub fn spawn_stars_over_time(
         let random_y = random::<f32>() * window.height();
 
         commands.spawn((
-            Transform::from_xyz(random_x, random_y, 0.0),
-            Sprite::from_image(asset_server.load("sprites/star.png")),
+            Sprite::from_image(asset_server.load("sprites/bitcoin.png")),
+            Transform {
+                translation: Vec3::new(random_x, random_y, 0.0),
+                scale: Vec3::splat(0.1), // 크기 20%로 축소
+                ..default()
+            },
             Star {},
         ));
     }

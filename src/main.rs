@@ -8,10 +8,10 @@ mod systems;
 
 use game::GamePlugin;
 use main_menu::MainMenuPlugin;
-
 use systems::*;
 
 use bevy::prelude::*;
+use bevy_embedded_assets::EmbeddedAssetPlugin;
 
 fn main() {
     App::new()
@@ -32,6 +32,7 @@ fn main() {
                 handle_game_over,
             ),
         )
+        .add_plugins(EmbeddedAssetPlugin::default())
         .run();
 }
 

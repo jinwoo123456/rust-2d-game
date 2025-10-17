@@ -17,7 +17,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
                 .with_children(|parent| {
                     // Star Image
                     parent.spawn((
-                        ImageNode::new(asset_server.load("sprites/star.png")),
+                        ImageNode::new(asset_server.load("embedded://sprites/bitcoin.png")),
                         IMAGE_NODE.clone(),
                     ));
                     // Score Text
@@ -41,7 +41,7 @@ pub fn build_hud(commands: &mut Commands, asset_server: &Res<AssetServer>) -> En
                     ));
                     // Enemy Image
                     parent.spawn((
-                        ImageNode::new(asset_server.load("sprites/ball_red_large.png")),
+                        ImageNode::new(asset_server.load("embedded://sprites/ball_red_large.png")),
                         IMAGE_NODE.clone(),
                     ));
                 });
